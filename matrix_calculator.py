@@ -30,7 +30,7 @@ def is_square(matrix):
 # -------------------- GAUSS-JORDAN Y OPERACIONES RELACIONADAS --------------------
 
 def gauss_jordan_elimination(matrix):
-    """Realiza la eliminación Gauss-Jordan mostrando los pasos en español."""
+    """Realiza la eliminación Gauss-Jordan en una matriz."""
     rows = len(matrix)
     cols = len(matrix[0])
     mat = clone_matrix(matrix)
@@ -80,7 +80,7 @@ def determinant(matrix):
     return det
 
 def adjugate(matrix):
-    """Calcula la adjunta (matriz de cofactores) de una matriz cuadrada."""
+    """Calcula la adjunta de una matriz cuadrada."""
     n = len(matrix)
     adj = []
     for i in range(n):
@@ -93,6 +93,7 @@ def adjugate(matrix):
     return adj
 
 def transpose(matrix):
+    """Devuelve la transpuesta de una matriz."""
     return list(map(list, zip(*matrix)))
 
 def inverse_by_adjugate(matrix):
@@ -164,6 +165,8 @@ def multiply_matrixes(m1, m2):
 
 def scalar_multiply(matrix, scalar):
     return [[elem * scalar for elem in row] for row in matrix]
+
+# -------------------- REGLA DE CRAMER --------------------
 
 def solve_cramers_rule(aug_matrix):
     """Resuelve un sistema lineal usando la regla de Cramer.
